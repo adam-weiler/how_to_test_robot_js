@@ -87,10 +87,14 @@ test('test_workday_on_day_off_returns_false', () => {
 });
 
 
-test.skip('test_workday_not_day_off_returns_true', () => {
+test('test_workday_not_day_off_returns_true', () => {
   // arrange
+  let bot = newRobot(false, false, false);  // No Repairs, Not Foreign, Not Vintage.
+  bot.dayOff = 'Sunday';
 
   // act
+  let result = isWorkday(bot, 'Monday');
 
   // assert
+  expect(result).toEqual(true);
 });
