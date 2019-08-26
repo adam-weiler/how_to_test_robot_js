@@ -25,12 +25,15 @@ test('test_that_vintage_robot_needing_repairs_sent_to_station_2', () => {
 });
 
 
-test.skip('test_that_standard_robot_needing_repairs_sent_to_station_3', () => {
+test('test_that_standard_robot_needing_repairs_sent_to_station_3', () => {
   // arrange
+  let bot = newRobot(true, false, false);  // Repairs, Not Foreign, Not Vintage
 
   // act
+  let result = station(bot);
 
   // assert
+  expect(result).toEqual(3);
 });
 
 
