@@ -1,12 +1,15 @@
 const {newRobot, station, isWorkday, prioritizeTasks}  = require("./robot.js");
 
 // remove .skip when you're ready to implement the test
-test.skip('test_that_foreign_robot_needing_repairs_sent_to_station_1', () => {
+test('test_that_foreign_robot_needing_repairs_sent_to_station_1', () => {
   // arrange
+  let bot = newRobot(true, true, false);  // Repairs, Foreign, Vintage
 
   // act
+  let result = station(bot);  // Should be 1
 
   // assert
+  expect(result).toEqual(1);
 });
 
 test.skip('test_that_vintage_robot_needing_repairs_sent_to_station_2', () => {
