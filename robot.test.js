@@ -74,12 +74,16 @@ test('test_prioritize_tasks_with_todos_returns_max_todo_value', () => {
 });
 
 
-test.skip('test_workday_on_day_off_returns_false', () => {
+test('test_workday_on_day_off_returns_false', () => {
   // arrange
+  let bot = newRobot(false, false, false);  // No Repairs, Not Foreign, Not Vintage.
+  bot.dayOff = 'Sunday';
 
   // act
+  let result = isWorkday(bot, 'Sunday');
 
   // assert
+  expect(result).toEqual(false);
 });
 
 
