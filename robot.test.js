@@ -61,12 +61,16 @@ test('test_prioritize_tasks_with_empty_todo_list_returns_negative_one', () => {
 });
 
 
-test.skip('test_prioritize_tasks_with_todos_returns_max_todo_value', () => {
+test('test_prioritize_tasks_with_todos_returns_max_todo_value', () => {
   // arrange
+  let bot = newRobot(false, false, false);  // No Repairs, Not Foreign, Not Vintage.
+  bot.todos.push(7, 42, 8, 5, -99);
 
   // act
+  let result = prioritizeTasks(bot);
 
   // assert
+  expect(result).toEqual(42);
 });
 
 
