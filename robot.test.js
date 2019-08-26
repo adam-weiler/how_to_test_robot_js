@@ -49,12 +49,15 @@ test('test_that_robot_in_good_condition_sent_to_station_4', () => {
 });
 
 
-test.skip('test_prioritize_tasks_with_empty_todo_list_returns_negative_one', () => {
+test('test_prioritize_tasks_with_empty_todo_list_returns_negative_one', () => {
   // arrange
+  let bot = newRobot(false, false, false);  // No Repairs, Not Foreign, Not Vintage.
 
   // act
+  let result = prioritizeTasks(bot);
 
   // assert
+  expect(result).toEqual(-1);
 });
 
 
