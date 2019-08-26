@@ -1,5 +1,5 @@
 {
-  "name": "how_to_test",
+  "name": "how_to_test_robot_js",
   "version": "1.0.0",
   "description": "[See assignment in Alexa](https://alexa.bitmaker.co/wdi/may-2017/assignments/2591/latest)",
   "scripts": {
@@ -17,5 +17,6 @@
   "homepage": "https://github.com/bitmakerlabs/how_to_test_robot#readme",
   "devDependencies": {
     "jest": "^23.6.0"
-  }
+  },
+  "main": "robot.js"
 }
